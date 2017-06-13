@@ -151,6 +151,44 @@ bool game::check(int a[9][9])//检查是否正确
             }
 
         }
+    int m = 0, n = 0;//3x3
+	for (m = 0; m <= 6; m = m + 3)
+	{
+		int m1 = m + 3;
+		for (n = 0; n <= 6; n = n + 3)
+		{
+			int m2 = n + 3;
+			for (int i1 = m; i1 < m1; i1++)
+			{
+				for (int j1 = n; j1 <m2; j1++)
+				{
+					if (a[i1][j1] >= 1 && a[i1][j1] <= 9)
+					{
+						for (int i2 = m; i2 < m1; i2++)
+						{
+							for (int j2 = n; j2 < m2; j2++)
+							{
+								if (i2 != i1&&j2 != j1)
+								{
+									if (a[i2][j2] >= 1 && a[i2][j2] <= 9)
+									{
+										if (a[i1][j1] == a[i2][j2])
+										{
+											result = false;
+											return result;
+										}
+									}
+
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
         return result;
 }
 
