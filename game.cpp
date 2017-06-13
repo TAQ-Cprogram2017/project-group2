@@ -187,7 +187,6 @@ bool game::check(int a[9][9])//检查是否正确
 			}
 		}
 	}
-}
 
         return result;
 }
